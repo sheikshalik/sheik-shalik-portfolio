@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07120e">
+  <meta name="description" content="S. Sheik Shalik — Ph.D. Research Scholar in Agronomy at Annamalai University, working across rice systems, precision agriculture, UAVs and geospatial intelligence.">
+  <meta property="og:title" content="S. Sheik Shalik — Academic Portfolio">
+  <meta property="og:description" content="Agronomy, precision agriculture and aerial intelligence.">
+  <title>S. Sheik Shalik — Academic Portfolio</title>
+  <link rel="preload" as="image" href="assets/rice-field-hero.jpg" fetchpriority="high">
+  <style>
+    :root {
+      color-scheme: dark;
+      --night: #07120e;
+      --deep: #0b1a13;
+      --forest: #10241a;
+      --moss: #183323;
+      --leaf: #c5e899;
+      --leaf-bright: #dcf3b4;
+      --gold: #e8c785;
+      --text: #f4f3e9;
+      --soft: #d0d8cd;
+      --muted: #9eaea1;
+      --line: rgba(226, 238, 222, .14);
+      --content: 1200px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body::selection { background: var(--leaf); color: var(--night); }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--leaf-bright); }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--content), calc(100% - 52px)); margin-inline: auto; }
+    .skip-link { position: fixed; z-index: 1000; top: 10px; left: 10px; padding: 10px 14px; transform: translateY(-150%); background: var(--leaf); color: var(--night); border-radius: 3px; }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: absolute;
+      z-index: 20;
+      inset: 0 0 auto;
+      border-bottom: 1px solid rgba(241, 245, 233, .18);
+      background: linear-gradient(180deg, rgba(4, 13, 9, .62), rgba(4, 13, 9, .13));
+    }
+    .nav-shell { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; flex: 0 0 auto; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(220, 243, 180, .65); color: var(--leaf-bright); font: 600 14px/1 var(--serif); letter-spacing: -.05em; }
+    .brand-name { display: grid; gap: 0; font-size: .82rem; font-weight: 700; letter-spacing: .11em; line-height: 1.3; text-transform: uppercase; }
+    .brand-name small { color: #c7d0c3; font-size: .58rem; font-weight: 500; letter-spacing: .2em; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(15px, 2.1vw, 30px); }
+    .nav-links a { color: rgba(246, 247, 238, .83); font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--leaf-bright); }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: min(850px, 100svh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #102017;
+      background-image:
+        linear-gradient(90deg, rgba(4, 13, 9, .94) 0%, rgba(4, 13, 9, .83) 34%, rgba(4, 13, 9, .48) 65%, rgba(4, 13, 9, .52) 100%),
+        linear-gradient(0deg, var(--night) 0%, rgba(7, 18, 14, .08) 31%, rgba(7, 18, 14, .06) 72%, rgba(7, 18, 14, .34) 100%),
+        url("assets/rice-field-hero.jpg");
+      background-position: center, center, center 55%;
+      background-size: cover;
+    }
+    .hero::before, .hero::after { position: absolute; z-index: -1; content: ""; pointer-events: none; }
+    .hero::before { inset: 0; background: radial-gradient(ellipse at 78% 47%, rgba(232, 199, 133, .12), transparent 36%); }
+    .hero::after { width: 1px; height: 72%; right: 8%; top: 14%; background: linear-gradient(transparent, rgba(228, 238, 211, .3), transparent); opacity: .42; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(290px, .72fr);
+      align-items: center;
+      gap: clamp(54px, 9vw, 132px);
+      padding-top: 108px;
+      padding-bottom: 78px;
+    }
+    .hero-copy { max-width: 700px; }
+    .eyebrow, .section-kicker { display: flex; align-items: center; gap: 12px; color: var(--leaf); font-size: .68rem; font-weight: 700; letter-spacing: .22em; line-height: 1.4; text-transform: uppercase; }
+    .eyebrow::before, .section-kicker::before { width: 34px; height: 1px; content: ""; flex: 0 0 auto; background: var(--leaf); box-shadow: 0 0 14px rgba(197, 232, 153, .62); }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { margin: 23px 0 24px; font: 500 clamp(4.2rem, 8.6vw, 8rem)/.87 var(--serif); letter-spacing: -.075em; text-shadow: 0 6px 40px rgba(0, 0, 0, .25); }
+    .hero h1 span { display: block; color: var(--leaf-bright); font-style: italic; font-weight: 400; }
+    .hero-lead { max-width: 650px; margin-bottom: 30px; color: rgba(243, 244, 234, .86); font-size: clamp(1rem, 1.3vw, 1.14rem); line-height: 1.9; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 31px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 12px 19px; border: 1px solid var(--leaf); color: var(--night); background: var(--leaf); font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; transition: transform .22s ease, background .22s ease, border-color .22s ease; }
+    .button:hover { transform: translateY(-2px); color: var(--night); background: var(--leaf-bright); border-color: var(--leaf-bright); }
+    .button-quiet { color: var(--text); background: rgba(7, 18, 14, .22); border-color: rgba(244, 243, 233, .48); backdrop-filter: blur(8px); }
+    .button-quiet:hover { color: var(--leaf-bright); background: rgba(7, 18, 14, .52); border-color: var(--leaf); }
+    .button svg, .text-link svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    .hero-location { display: flex; align-items: center; gap: 10px; color: rgba(236, 239, 229, .72); font-size: .78rem; letter-spacing: .04em; }
+    .hero-location svg { width: 15px; height: 15px; color: var(--gold); }
+
+    .portrait-area { position: relative; width: min(100%, 370px); justify-self: center; padding: 13px; border: 1px solid rgba(243, 244, 229, .32); background: linear-gradient(145deg, rgba(240, 245, 222, .13), rgba(9, 23, 16, .3)); box-shadow: 0 35px 90px rgba(0, 0, 0, .32); backdrop-filter: blur(10px); }
+    .portrait-area::before { position: absolute; z-index: -1; content: ""; width: 80%; height: 70%; right: -26px; bottom: -27px; border-right: 1px solid rgba(232, 199, 133, .55); border-bottom: 1px solid rgba(232, 199, 133, .55); }
+    .portrait-frame { position: relative; min-height: 445px; aspect-ratio: .79; display: grid; align-content: center; justify-items: center; overflow: hidden; margin: 0; isolation: isolate; border: 1px solid rgba(238, 240, 219, .35); background: radial-gradient(ellipse at 48% 35%, rgba(165, 193, 126, .19), transparent 38%), linear-gradient(158deg, rgba(45, 70, 48, .65), rgba(6, 18, 12, .82)); }
+    .portrait-frame::before { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .48; background-image: linear-gradient(rgba(220, 243, 180, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(220, 243, 180, .08) 1px, transparent 1px); background-size: 36px 36px; mask-image: linear-gradient(180deg, black, transparent 82%); }
+    .portrait-frame::after { position: absolute; z-index: -1; content: ""; width: 64%; aspect-ratio: 1; top: 14%; left: 18%; border: 1px solid rgba(220, 243, 180, .16); border-radius: 50%; box-shadow: 0 0 0 28px rgba(220, 243, 180, .025), 0 0 0 58px rgba(220, 243, 180, .02); }
+    .portrait-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; clip-path: circle(49% at 50% 50%); filter: drop-shadow(0 14px 28px rgba(0, 0, 0, .28)); }
+    .portrait-caption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; gap: 10px; padding: 14px 16px; color: #edf2e6; background: linear-gradient(90deg, rgba(5, 16, 10, .91), rgba(5, 16, 10, .59)); font-size: .59rem; letter-spacing: .12em; text-transform: uppercase; }
+    .portrait-caption span:first-child { color: var(--leaf); font-weight: 750; }
+    .portrait-index { position: absolute; top: 15px; left: 16px; z-index: 2; color: rgba(242, 245, 230, .66); font-size: .58rem; letter-spacing: .18em; }
+
+    .proof-strip { position: relative; z-index: 2; margin-top: -1px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(90deg, #0d1b14, #101f16 50%, #0d1b14); }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .proof-item { min-height: 112px; display: flex; align-items: center; gap: 16px; padding: 20px clamp(14px, 2.5vw, 32px); border-right: 1px solid var(--line); }
+    .proof-item:first-child { border-left: 1px solid var(--line); }
+    .proof-number { color: var(--leaf); font: 400 clamp(1.8rem, 3vw, 2.5rem)/1 var(--serif); letter-spacing: -.06em; white-space: nowrap; }
+    .proof-label { max-width: 130px; color: var(--muted); font-size: .65rem; font-weight: 650; letter-spacing: .09em; line-height: 1.55; text-transform: uppercase; }
+
+    .section { position: relative; padding: clamp(78px, 9vw, 128px) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+    .section-heading { max-width: 720px; margin-bottom: 46px; }
+    .section-heading h2 { margin: 17px 0 15px; font: 400 clamp(2.7rem, 5vw, 4.7rem)/1 var(--serif); letter-spacing: -.065em; }
+    .section-heading p { max-width: 630px; margin-bottom: 0; color: var(--muted); font-size: .98rem; line-height: 1.9; }
+    .section-heading .section-kicker { color: var(--gold); }
+    .about-section { background: radial-gradient(ellipse at 85% 45%, rgba(36, 68, 43, .17), transparent 34%), var(--night); }
+    .about-layout { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1fr); gap: clamp(50px, 9vw, 130px); align-items: start; }
+    .about-intro { color: var(--soft); font: 400 clamp(1.35rem, 2.3vw, 1.9rem)/1.55 var(--serif); }
+    .about-body { color: var(--muted); font-size: .94rem; line-height: 1.95; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .education { margin-top: 32px; border-top: 1px solid var(--line); }
+    .education-item { position: relative; padding: 21px 0 21px 23px; border-bottom: 1px solid var(--line); }
+    .education-item::before { position: absolute; left: 0; top: 29px; width: 7px; height: 7px; content: ""; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 5px rgba(197, 232, 153, .1); }
+    .education-item h3 { margin: 0 0 5px; color: var(--text); font-size: .95rem; }
+    .education-item p { margin: 0; color: var(--muted); font-size: .79rem; }
+    .education-item .study-note { margin-top: 6px; color: #b9c4b7; }
+
+    .research-section { overflow: hidden; background: linear-gradient(155deg, #101e15, #0b1711 70%); }
+    .research-section::after { position: absolute; top: 20px; right: -100px; width: min(45vw, 600px); aspect-ratio: 1; content: ""; pointer-events: none; opacity: .22; background: repeating-radial-gradient(ellipse at 50% 50%, transparent 0 31px, rgba(197, 232, 153, .3) 32px 33px, transparent 34px 61px); transform: rotate(-16deg); mask-image: linear-gradient(135deg, black, transparent 70%); }
+    .research-section .container { position: relative; z-index: 1; }
+    .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .theme-card { min-height: 224px; padding: 26px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(9, 24, 15, .3); transition: background .25s ease; }
+    .theme-card:hover { background: rgba(27, 53, 34, .44); }
+    .theme-number { color: var(--gold); font: 400 1.1rem/1 var(--serif); }
+    .theme-card h3 { margin: 26px 0 9px; font: 400 1.45rem/1.18 var(--serif); }
+    .theme-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.8; }
+    .toolkit { display: grid; grid-template-columns: .46fr 1fr; align-items: start; gap: 30px; margin-top: 50px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .toolkit h3 { margin: 0; color: var(--leaf); font-size: .71rem; letter-spacing: .17em; text-transform: uppercase; }
+    .tool-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tool-tags span { padding: 7px 11px; border: 1px solid rgba(215, 231, 205, .19); color: #d1dbcf; font-size: .73rem; }
+
+    .publication-section { background: var(--night); }
+    .publication-list { border-top: 1px solid var(--line); }
+    .publication { display: grid; grid-template-columns: 68px minmax(0, 1fr) auto; align-items: center; gap: 25px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .publication-year { align-self: start; padding-top: 3px; color: var(--gold); font: 400 1.25rem/1 var(--serif); }
+    .publication h3 { max-width: 790px; margin: 0 0 7px; font-size: .97rem; font-weight: 560; line-height: 1.55; }
+    .publication p { margin: 0; color: var(--muted); font-size: .76rem; }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--leaf); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .text-link:hover { color: var(--leaf-bright); }
+    .profile-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 34px; }
+    .profile-links a { padding-bottom: 5px; border-bottom: 1px solid rgba(197, 232, 153, .42); color: #d6e6c9; font-size: .75rem; letter-spacing: .04em; }
+
+    .recognition-section { background: #0c1a12; }
+    .recognition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .recognition-card { min-height: 214px; padding: 27px; background: #0c1a12; }
+    .recognition-card .tag { color: var(--gold); font-size: .62rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .recognition-card h3 { margin: 19px 0 8px; font: 400 1.36rem/1.2 var(--serif); }
+    .recognition-card p { margin: 0; color: var(--muted); font-size: .79rem; line-height: 1.8; }
+
+    .design-section { background: radial-gradient(ellipse at 93% 50%, rgba(40, 65, 39, .22), transparent 37%), var(--night); }
+    .design-layout { display: grid; grid-template-columns: .55fr 1fr; gap: 36px; align-items: stretch; }
+    .design-index { display: flex; flex-direction: column; justify-content: space-between; min-height: 240px; padding: 26px; border: 1px solid var(--line); color: var(--leaf); background: linear-gradient(155deg, rgba(20, 43, 28, .72), rgba(7, 18, 14, .72)); }
+    .design-index strong { font: 400 clamp(2.6rem, 5vw, 4.4rem)/1 var(--serif); }
+    .design-index span { font-size: .65rem; letter-spacing: .17em; text-transform: uppercase; }
+    .design-copy { display: flex; flex-direction: column; justify-content: center; padding: 20px 0; }
+    .design-copy .section-kicker { margin-bottom: 18px; }
+    .design-copy h3 { margin-bottom: 12px; font: 400 clamp(1.9rem, 3.2vw, 2.8rem)/1.1 var(--serif); }
+    .design-copy p { max-width: 700px; margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.9; }
+
+    .digital-section { position: relative; overflow: hidden; background: linear-gradient(110deg, rgba(6, 17, 11, .96), rgba(7, 18, 14, .89)), url("assets/rice-field-hero.jpg") center 62% / cover; }
+    .digital-section::after { position: absolute; inset: 0 0 0 auto; width: 35%; content: ""; pointer-events: none; opacity: .14; background: repeating-linear-gradient(155deg, transparent 0 22px, rgba(220, 243, 180, .35) 23px 24px, transparent 25px 52px); mask-image: linear-gradient(90deg, transparent, black); }
+    .digital-section .container { position: relative; z-index: 1; }
+    .digital-intro { display: grid; grid-template-columns: 1fr .74fr; align-items: end; gap: 55px; margin-bottom: 40px; }
+    .digital-intro .section-heading { margin: 0; }
+    .digital-intro .section-heading h2 { color: var(--leaf-bright); }
+    .digital-note { padding: 24px 0 5px 25px; border-left: 1px solid rgba(232, 199, 133, .5); color: rgba(237, 240, 228, .77); font: 400 1.18rem/1.65 var(--serif); }
+    .program-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .program-card { min-height: 176px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(8, 20, 13, .42); }
+    .program-card span { color: var(--gold); font-size: .61rem; font-weight: 700; letter-spacing: .15em; }
+    .program-card h3 { margin: 16px 0 8px; font: 400 1.17rem/1.2 var(--serif); }
+    .program-card p { margin: 0; color: var(--muted); font-size: .73rem; line-height: 1.75; }
+    .digital-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .contact-section { background: linear-gradient(180deg, #0d1b13, #08130e); }
+    .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 8vw, 112px); align-items: start; }
+    .contact-layout .section-heading { margin-bottom: 0; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .contact-detail { min-height: 128px; padding: 21px; background: #0c1a12; }
+    .contact-detail small { display: block; margin-bottom: 11px; color: var(--gold); font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .contact-detail p, .contact-detail a { margin: 0; color: var(--soft); font-size: .83rem; line-height: 1.75; overflow-wrap: anywhere; }
+    .contact-detail a:hover { color: var(--leaf-bright); }
+    .contact-detail.address { grid-column: 1 / -1; min-height: unset; }
+    .contact-profiles { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 13px 20px; padding: 18px 21px; background: #0c1a12; }
+    .contact-profiles a { color: var(--leaf); font-size: .7rem; letter-spacing: .04em; }
+
+    .site-footer { padding: 26px 0 34px; color: var(--muted); background: #07120e; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+    .footer-top strong { color: var(--soft); font-size: .78rem; font-weight: 600; }
+    .footer-top span, .footer-note { font-size: .68rem; }
+    .footer-note { margin: 13px 0 0; line-height: 1.65; }
+
+    .reveal { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+      .js .reveal:not(.is-visible) { opacity: 0; transform: translateY(16px); }
+      .reveal { transition: opacity .65s ease, transform .65s cubic-bezier(.2, .7, .2, 1); }
+      .hero-copy { animation: rise-in .8s both cubic-bezier(.2, .7, .2, 1); }
+      .portrait-area { animation: rise-in .9s .12s both cubic-bezier(.2, .7, .2, 1); }
+      @keyframes rise-in { from { opacity: .45; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media (max-width: 960px) {
+      .nav-shell { min-height: 76px; gap: 18px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: .66rem; }
+      .hero { min-height: 790px; }
+      .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(255px, .72fr); gap: 36px; }
+      .portrait-frame { min-height: 390px; }
+      .proof-item { gap: 11px; padding-inline: 14px; }
+      .proof-label { font-size: .58rem; }
+      .program-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(var(--content), calc(100% - 38px)); }
+      .site-header { background: rgba(4, 13, 9, .72); backdrop-filter: blur(15px); }
+      .nav-shell { min-height: 72px; display: grid; justify-content: stretch; gap: 4px; padding: 10px 0 12px; }
+      .brand { width: max-content; }
+      .nav-links { justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 2px 0 4px; scrollbar-width: none; }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links a { flex: 0 0 auto; font-size: .61rem; }
+      .hero { min-height: unset; background-position: center, center, 58% center; }
+      .hero::after { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 43px; padding-top: 168px; padding-bottom: 78px; }
+      .hero h1 { font-size: clamp(4rem, 15.8vw, 6rem); }
+      .hero-lead { max-width: 590px; }
+      .portrait-area { width: min(78%, 340px); justify-self: start; margin-left: 5px; }
+      .portrait-frame { min-height: 405px; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-item { min-height: 92px; border-bottom: 1px solid var(--line); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(3) { border-left: 1px solid var(--line); border-bottom: 0; }
+      .proof-item:nth-child(4) { border-bottom: 0; }
+      .proof-number { font-size: 2rem; }
+      .proof-label { max-width: 140px; font-size: .6rem; }
+      .section { padding: 76px 0; }
+      .section-heading { margin-bottom: 35px; }
+      .section-heading h2 { font-size: clamp(2.65rem, 11vw, 3.7rem); }
+      .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 37px; }
+      .about-intro { max-width: 600px; }
+      .theme-grid { grid-template-columns: repeat(2, 1fr); }
+      .theme-card { min-height: 205px; padding: 22px; }
+      .theme-card h3 { margin-top: 20px; font-size: 1.32rem; }
+      .toolkit { grid-template-columns: 1fr; gap: 16px; }
+      .publication { grid-template-columns: 47px minmax(0, 1fr); gap: 13px; padding: 22px 0; }
+      .publication .text-link { grid-column: 2; justify-self: start; }
+      .recognition-grid { grid-template-columns: repeat(2, 1fr); }
+      .recognition-card { min-height: 200px; padding: 21px; }
+      .design-layout { grid-template-columns: .45fr 1fr; gap: 22px; }
+      .design-index { min-height: 215px; padding: 19px; }
+      .digital-intro { grid-template-columns: 1fr; gap: 24px; }
+      .digital-note { max-width: 600px; padding-top: 0; }
+      .contact-details { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 32px); }
+      .hero-inner { padding-top: 155px; }
+      .hero h1 { font-size: clamp(3.65rem, 17vw, 4.9rem); }
+      .hero-actions { align-items: stretch; }
+      .button { min-height: 45px; padding-inline: 14px; font-size: .63rem; }
+      .hero-location { align-items: flex-start; font-size: .72rem; }
+      .portrait-area { width: 88%; }
+      .portrait-frame { min-height: 365px; }
+      .proof-item { padding-inline: 12px; }
+      .proof-number { font-size: 1.75rem; }
+      .proof-label { font-size: .55rem; }
+      .theme-grid, .recognition-grid { grid-template-columns: 1fr; }
+      .theme-card { min-height: 170px; }
+      .recognition-card { min-height: unset; padding: 24px; }
+      .design-layout { grid-template-columns: 1fr; }
+      .design-index { min-height: 140px; }
+      .program-grid { grid-template-columns: 1fr; }
+      .program-card { min-height: unset; }
+      .contact-details { grid-template-columns: 1fr; }
+      .contact-detail.address, .contact-profiles { grid-column: auto; }
+      .footer-top { align-items: flex-start; flex-direction: column; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="S. Sheik Shalik academic portfolio home">
+        <span class="brand-mark">SSS</span>
+        <span class="brand-name">S. Sheik Shalik<small>Academic Portfolio</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#shaliks-digital">Shalik’s Digital</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Agronomy · Precision Agriculture · Aerial Intelligence</p>
+          <h1 id="hero-title">S. Sheik<span>Shalik.</span></h1>
+          <p class="hero-lead">Ph.D. Research Scholar in Agronomy at Annamalai University. My work brings together rice agronomy, sustainable farming systems and emerging geospatial tools to support better agricultural decisions.</p>
+          <div class="hero-actions">
+            <a class="button" href="#research">Explore my research <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="button button-quiet" href="#contact">Get in touch</a>
+          </div>
+          <p class="hero-location"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 8.3c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 1 1 12 0Z" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/></svg>Annamalai Nagar, Chidambaram · Tamil Nadu, India</p>
+        </div>
+
+        <div class="portrait-area">
+          <figure class="portrait-frame" aria-label="Portrait of S. Sheik Shalik">
+            <span class="portrait-index">PORTRAIT · 01</span>
+            <img class="portrait-photo" src="assets/sheik-shalik-portrait.png" alt="S. Sheik Shalik, Ph.D. Research Scholar in Agronomy" fetchpriority="high">
+            <figcaption class="portrait-caption"><span>Academic portrait</span><span>S. Sheik Shalik</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Selected portfolio highlights">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong class="proof-number">13</strong><span class="proof-label">Research and review articles listed in the CV</span></div>
+        <div class="proof-item"><strong class="proof-number">05</strong><span class="proof-label">Book chapters</span></div>
+        <div class="proof-item"><strong class="proof-number">01</strong><span class="proof-label">Registered industrial design</span></div>
+        <div class="proof-item"><strong class="proof-number">2035</strong><span class="proof-label">Remote Pilot Certificate valid through August</span></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-layout">
+          <div class="reveal">
+            <p class="section-kicker">A little about my work</p>
+            <h2 class="about-intro" id="about-title">Field-based agronomy, connected to the tools shaping agriculture’s next chapter.</h2>
+            <div class="education">
+              <article class="education-item">
+                <h3>Ph.D. (Agriculture), Agronomy</h3>
+                <p>Annamalai University · July 2024–Present</p>
+                <p class="study-note">Research focus: nutrient and weed management strategies in traditional rice systems.</p>
+              </article>
+              <article class="education-item">
+                <h3>M.Sc. (Agriculture), Agronomy</h3>
+                <p>Annamalai University · 2021–2023 · OGPA 8.07 (80%)</p>
+                <p class="study-note">Thesis on enriched bio-digested bone sludge compost and rice yield.</p>
+              </article>
+              <article class="education-item">
+                <h3>B.Sc. (Hons.) Agriculture</h3>
+                <p>Karunya Institute of Technology and Sciences · 2017–2021 · OGPA 8.01 (80%)</p>
+              </article>
+            </div>
+          </div>
+          <div class="about-body reveal">
+            <p>My academic work focuses on nutrient and weed management in rice-based systems, with wider interests in climate-smart agriculture, agricultural waste valorisation and sustainable crop production.</p>
+            <p>I am interested in how UAV-based monitoring, remote sensing, GIS and data analysis can support field research and practical agricultural decision-making. My technical training includes a DGCA Remote Pilot Certificate for small-category rotorcraft.</p>
+            <p>Alongside research, I contribute through scientific writing, conference presentations, peer review, teaching and knowledge sharing with students and professionals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section research-section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Research & expertise</p>
+          <h2 id="research-title">Questions grounded in the field.</h2>
+          <p>Research interests and technical areas drawn from my academic work and professional training.</p>
+        </div>
+        <div class="theme-grid">
+          <article class="theme-card reveal"><span class="theme-number">01 / Agronomy</span><h3>Rice & nutrient management</h3><p>Integrated organic and inorganic nutrition, soil fertility, crop growth, yield and resource-use efficiency.</p></article>
+          <article class="theme-card reveal"><span class="theme-number">02 / Weed science</span><h3>Weed dynamics</h3><p>Herbicide evaluation and integrated weed-management strategies in rice-based cropping systems.</p></article>
+          <article class="theme-card reveal"><span class="theme-number">03 / Digital agriculture</span><h3>UAVs & geospatial tools</h3><p>Remote sensing, GIS and aerial monitoring for precision agriculture and field assessment.</p></article>
+          <article class="theme-card reveal"><span class="theme-number">04 / Research methods</span><h3>Statistics & field trials</h3><p>Experimental design, field-based research and agricultural statistical analysis in R.</p></article>
+          <article class="theme-card reveal"><span class="theme-number">05 / Sustainability</span><h3>Circular bioeconomy</h3><p>Agricultural waste valorisation, soil health and climate-smart farming approaches.</p></article>
+          <article class="theme-card reveal"><span class="theme-number">06 / Communication</span><h3>Research & teaching</h3><p>Scientific writing, conference presentations, peer review and sharing technical knowledge.</p></article>
+        </div>
+        <div class="toolkit reveal">
+          <h3>Methods & tools</h3>
+          <div class="tool-tags" aria-label="Technical tools and methods">
+            <span>UAV / Drones</span><span>Remote sensing</span><span>QGIS</span><span>ArcGIS</span><span>Google Earth Engine</span><span>R</span><span>Trimble Business Center</span><span>GPS / DGPS</span><span>Total Station</span><span>Experimental Design</span><span>Canva</span><span>MS Office</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publication-section" id="publications" aria-labelledby="publications-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Selected publications</p>
+          <h2 id="publications-title">Research in print.</h2>
+          <p>A small selection from my published work. DOI links open the publisher record.</p>
+        </div>
+        <div class="publication-list">
+          <article class="publication reveal"><span class="publication-year">2026</span><div><h3>A systematic review of agricultural waste valorisation for circular bioeconomy: Technologies, sustainability trade-offs and resource recovery strategies</h3><p>Plant Science Today · 13(sp5), 1–16</p></div><a class="text-link" href="https://doi.org/10.14719/pst.15158" target="_blank" rel="noopener noreferrer">View DOI <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h9v9M16 4 8 12M14 11v4H4V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+          <article class="publication reveal"><span class="publication-year">2025</span><div><h3>An Overview of Data Science and Big Data Applications in Agriculture for Smart and Sustainable Farming</h3><p>Journal of Experimental Agriculture International · 47(5), 759–774</p></div><a class="text-link" href="https://doi.org/10.9734/jeai/2025/v47i53465" target="_blank" rel="noopener noreferrer">View DOI <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h9v9M16 4 8 12M14 11v4H4V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+          <article class="publication reveal"><span class="publication-year">2024</span><div><h3>Impact of enriched bio-digested bone sludge compost on the growth and yield of rice (Oryza sativa L.)</h3><p>Ecology, Environment and Conservation · 30(Suppl. Issue), S39–S43</p></div><a class="text-link" href="https://doi.org/10.53550/EEC.2024.v30i06s.006" target="_blank" rel="noopener noreferrer">View DOI <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h9v9M16 4 8 12M14 11v4H4V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+          <article class="publication reveal"><span class="publication-year">2024</span><div><h3>Investigating the impact of bone sludge compost on nutrient uptake and post-harvest soil nutrient levels</h3><p>Crop Research · 59(3 & 4), 149–154</p></div><a class="text-link" href="https://doi.org/10.31830/2454-1761.2024.CR-974" target="_blank" rel="noopener noreferrer">View DOI <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h9v9M16 4 8 12M14 11v4H4V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+          <article class="publication reveal"><span class="publication-year">2024</span><div><h3>Effect of enriched bio-digested bone sludge compost on the yield and economics of rice cultivation var. ADT 43</h3><p>International Journal of Research in Agronomy · 7(3), 227–230</p></div><a class="text-link" href="https://doi.org/10.33545/2618060X.2024.v7.i3d.424" target="_blank" rel="noopener noreferrer">View DOI <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h9v9M16 4 8 12M14 11v4H4V5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
+        </div>
+        <div class="profile-links" aria-label="Publication profiles">
+          <a href="https://scholar.google.com/citations?user=HnkoaD8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">All publications on Google Scholar ↗</a>
+          <a href="https://www.researchgate.net/profile/Sheik_Shalik?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section recognition-section" id="recognition" aria-labelledby="recognition-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Recognition & service</p>
+          <h2 id="recognition-title">Milestones along the way.</h2>
+          <p>Selected research awards, academic recognition and service from my CV.</p>
+        </div>
+        <div class="recognition-grid">
+          <article class="recognition-card reveal"><span class="tag">Research award · 2025</span><h3>Rafi Ahmed Kidwai Best Research Scholar Award</h3><p>Awarded at the 3rd International Conference on The Next Green Revolution, August 2025.</p></article>
+          <article class="recognition-card reveal"><span class="tag">Academic award · 2025</span><h3>Best M.Sc. Thesis Award</h3><p>Recognised for thesis research on enriched bio-digested bone sludge compost and rice yield, April 2025.</p></article>
+          <article class="recognition-card reveal"><span class="tag">Conference recognition</span><h3>Presentation awards</h3><p>Best Poster Presentation, Annamalai University, March 2025; Best Presentation, Sir Theagaraya College, February 2025.</p></article>
+          <article class="recognition-card reveal"><span class="tag">Fellowship · 2024–2025</span><h3>University Research Studentship</h3><p>₹26,000 studentship listed for the 2024–2025 academic year, Annamalai University.</p></article>
+          <article class="recognition-card reveal"><span class="tag">Academic service</span><h3>Peer reviewer</h3><p>Reviewer recognitions include Wiley’s International Journal of Agronomy and Plant Science Today.</p></article>
+          <article class="recognition-card reveal"><span class="tag">Leadership · 2026</span><h3>AIASA, Tamil Nadu</h3><p>State Secretary, State Environment Cell, and Deputy Chairman, State IT Cell, All India Agricultural Students Association.</p></article>
+        </div>
+        <p class="hero-location" style="margin-top:22px">DGCA Remote Pilot Certificate · Small Category (Rotorcraft), RPAS (VLOS) · Issued 16 September 2025 · Valid to 30 August 2035</p>
+      </div>
+    </section>
+
+    <section class="section design-section" aria-labelledby="design-title">
+      <div class="container design-layout reveal">
+        <div class="design-index"><strong>421504–001</strong><span>Design Registration · 28 June 2024</span></div>
+        <div class="design-copy">
+          <p class="section-kicker">Innovation & intellectual property</p>
+          <h3 id="design-title">Portable Chlorophyll Measurement Device</h3>
+          <p>Design Registration No. 421504-001, registered under the Designs Act, 2000, Government of India, on 28 June 2024. The CV lists Annamalai University as the affiliation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section digital-section" id="shaliks-digital" aria-labelledby="digital-title">
+      <div class="container">
+        <div class="digital-intro">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Knowledge sharing · Training · Speaking</p>
+            <h2 id="digital-title">Shalik’s Digital</h2>
+            <p>A knowledge-sharing initiative focused on helping students, researchers, educators and professionals understand emerging tools and apply them with confidence.</p>
+          </div>
+          <p class="digital-note reveal">Turning agricultural technology into practical, approachable learning.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card reveal"><span>01 · DRONE TECHNOLOGY</span><h3>Drone Pilot & UAV Awareness</h3><p>Drone technology, remote pilot pathways, flight safety and responsible UAV operations.</p></article>
+          <article class="program-card reveal"><span>02 · PRECISION AGRICULTURE</span><h3>Agri-Drones & Aerial Intelligence</h3><p>Crop monitoring, precision spraying, field assessment and aerial data applications.</p></article>
+          <article class="program-card reveal"><span>03 · RESEARCH TECHNOLOGY</span><h3>GIS, Mapping & Digital Tools</h3><p>Geospatial workflows, digital agriculture, AI-enabled tools and visual communication.</p></article>
+          <article class="program-card reveal"><span>04 · RESEARCH SKILLS</span><h3>Research & Data Skills</h3><p>Scientific communication, agricultural data analysis and responsible AI use.</p></article>
+        </div>
+        <div class="digital-actions reveal">
+          <a class="button" href="mailto:sheikshalikagri@gmail.com?subject=Shalik%27s%20Digital%20Workshop%20Enquiry">Invite me / Request a programme <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="button button-quiet" href="https://www.linkedin.com/in/sheik-shalik-23346b218/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+          <a class="text-link" href="mailto:sheikshalikagri@gmail.com?subject=Shalik%27s%20Digital%20Programme%20Planning">Plan a programme together ↗</a>
+        </div>
+        <p class="footer-note">Programme topics and availability can be discussed by email; this page does not provide automated registration.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Let’s connect</p>
+          <h2 id="contact-title">Start a conversation.</h2>
+          <p>For research collaboration, speaking invitations, academic discussions and knowledge-sharing sessions.</p>
+        </div>
+        <div class="contact-details reveal">
+          <div class="contact-detail"><small>Email</small><p><a href="mailto:sheikshalikagri@gmail.com">sheikshalikagri@gmail.com</a></p></div>
+          <div class="contact-detail"><small>Phone</small><p><a href="tel:+918248142806">+91 82481 42806</a></p></div>
+          <div class="contact-detail address"><small>Affiliation</small><p>Department of Agronomy, Faculty of Agriculture<br>Annamalai University, Annamalai Nagar, Chidambaram, Tamil Nadu, India</p></div>
+          <div class="contact-profiles" aria-label="Academic and professional profiles">
+            <a href="https://www.linkedin.com/in/sheik-shalik-23346b218/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://orcid.org/0009-0002-3544-2469" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+            <a href="https://www.webofscience.com/wos/author/record/NJT-0901-2025" target="_blank" rel="noopener noreferrer">Web of Science ↗</a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=59479149400" target="_blank" rel="noopener noreferrer">Scopus ↗</a>
+            <a href="https://scholar.google.com/citations?user=HnkoaD8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+            <a href="https://www.researchgate.net/profile/Sheik_Shalik?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top"><strong>© <span id="year"></span> S. Sheik Shalik · Academic Portfolio</strong><span>Agronomy · Research · Knowledge sharing</span></div>
+      <p class="footer-note">This portfolio highlights selected academic, research and professional activities. Details may be updated as new work is completed.</p>
+    </div>
+  </footer>
+  <script>
+    document.documentElement.classList.add("js");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    } else {
+      document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
